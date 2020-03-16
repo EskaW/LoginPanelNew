@@ -2,7 +2,8 @@ import "../App.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { BrowserRouter, Link, Route } from "react-router-dom";
-import Register from "./RegisterForm";
+import { RegisterForm } from "./RegisterForm";
+import { ForgottenPassForm } from "./ForgottenPass"
 
 const isEmailValid = email => {
   if (!email) {
@@ -59,39 +60,39 @@ export const LoginForm = () => {
   const changePassword = password => setPassword(password);
 
   return (
-    <BrowserRouter>
-      <section>
-        <Route path="./RegisterForm" component={Register} />
-        <form>
-          <label>Login Form</label>
-          <input
-            type="email"
-            name="email"
-            placeholder="example@gmail.com"
-            value={email}
-            onChange={e => changeEmail(e.target.value)}
-          />
-          {emailError && <label>{emailError}</label>}
+    <section>
+      <header>Login Form</header>
+      <form>
+        <input
+          type="email"
+          name="email"
+          placeholder="example@gmail.com"
+          value={email}
+          onChange={e => changeEmail(e.target.value)}
+        />
+        {emailError && <label>{emailError}</label>}
 
-          <input
-            type="password"
-            name="password"
-            placeholder="password"
-            value={password}
-            onChange={e => changePassword(e.target.value)}
-          />
-          {passwordError && <label>{passwordError}</label>}
-          {/* <label>Forgotten password?</label> */}
-          <button id="login" value="Login" onClick={onSubmit}>
-            Login
+        <input
+          type="password"
+          name="password"
+          placeholder="password"
+          value={password}
+          onChange={e => changePassword(e.target.value)}
+        />
+        {passwordError && <label>{passwordError}</label>}
+        <Link to="/ForgottenPassForm">
+          <label className="label">Forgotten password?</label>
+        </Link>
+        <button id="login" value="Login" onClick={onSubmit}>
+          Login
           </button>
-          <Link to="./RegisterForm" class="link">
-            <button id="register" value="Register">
-              Register
+        <Link to="/RegisterForm" className="link">
+          <button id="register" value="Register">
+            Register
             </button>
-          </Link>
-        </form>
-      </section>
-    </BrowserRouter>
+        </Link>
+      </form>
+    </section>
   );
 };
+

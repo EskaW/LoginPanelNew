@@ -64,16 +64,11 @@ input {
   }
 } */
 
-.App-header {
-  background-color: #22bd60;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  /* align-items: center; */
-  top: 10vh;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+.label {
+  font-size: calc(0.5em + 0.5vh);
+  color: rgb(72, 235, 235);
+  font-family: "Trebuchet MS", "Lucida Sans Unicode", "Lucida Grande",
+    "Lucida Sans", Arial, sans-serif;
 }
 
 #login {
@@ -84,8 +79,4 @@ input {
 #register {
   background-color: #009889;
   color: white;
-}
-
-.App-link {
-  color: #61dafb;
 }
