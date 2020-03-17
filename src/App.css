@@ -5,7 +5,7 @@
   align-items: center;
   /* background-color: #326647;
   background-image: url("./floral-pattern.png"); */
-  background-image: linear-gradient(to bottom, #00988957, #f6d7b0, #522848),
+  background-image: linear-gradient(to bottom, #00988957, white, #f6d7b0, #522848),
     url('./medical7.png');
   /* background: linear-gradient(#3d7554, #040c07);
   background: #f6d7b0 url("./forestOne.jpg"); */
