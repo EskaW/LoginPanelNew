@@ -33,14 +33,14 @@ export const LoginForm = () => {
   const onSubmit = e => {
     e.preventDefault();
     if (!isEmailValid(email)) {
-      setEmailError("Email is not valid");
+      setEmailError("Email is not valid:");
     } else {
       setEmailError("");
       postData();
     }
 
     if (!isPasswordValid(password)) {
-      setPasswordError("Password is required");
+      setPasswordError("Password is required:");
     } else {
       setPasswordError("");
       postData();
@@ -48,9 +48,9 @@ export const LoginForm = () => {
   };
 
   const postData = () => {
-    console.log("poszlo....!");
     try {
       axios.post("url", { email, password });
+      console.log("poszlo....!");
     } catch (error) {
       console.log(error);
     }
@@ -58,12 +58,12 @@ export const LoginForm = () => {
 
   const changeEmail = email => setEmail(email);
   const changePassword = password => setPassword(password);
-  const pageTitle = "Login Form";
 
   return (
     <section>
       <form>
-        <label>Login Panel</label>
+        <label className="title">Login Panel</label>
+        {emailError && <label className="error">{emailError}</label>}
         <input
           type="email"
           name="email"
@@ -71,8 +71,7 @@ export const LoginForm = () => {
           value={email}
           onChange={e => changeEmail(e.target.value)}
         />
-        {emailError && <label>{emailError}</label>}
-
+        {passwordError && <label className="error">{passwordError}</label>}
         <input
           type="password"
           name="password"
@@ -80,7 +79,6 @@ export const LoginForm = () => {
           value={password}
           onChange={e => changePassword(e.target.value)}
         />
-        {passwordError && <label>{passwordError}</label>}
         <Link to="/ForgottenPass">
           <label className="label">Forgotten password?</label>
         </Link>

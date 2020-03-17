@@ -18,7 +18,7 @@ const Router = () => (
 function App() {
   return (
     <div className="App">
-      {/* <h1>Welcome to Healthy Club page! </h1> */}
+      {/* <label className="header">Welcome to MedicalCare Club! </label> */}
       <BrowserRouter>
         <div className="Panel ContainerFlex">
           <Router />

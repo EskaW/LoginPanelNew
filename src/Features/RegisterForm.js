@@ -62,7 +62,6 @@ export const RegisterForm = () => {
     const errorMsg = validate(form);
     if (errorMsg) {
       setError(errorMsg);
-      console.log("error");
       return;
     } else {
       // setMsq("Form submitted")
@@ -84,8 +83,8 @@ export const RegisterForm = () => {
   return (
     <section>
       <form>
-        <label>Register Form</label>
-        {error && <label>{error}</label>}
+        <label className="title">Register Form</label>
+        {error && <label className="error">{error}</label>}
         {msg && <label>{msg}</label>}
         <input
           type="text"
