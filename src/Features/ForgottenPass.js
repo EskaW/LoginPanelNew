@@ -45,29 +45,26 @@ export const ForgottenPassForm = () => {
   const changeEmail = email => setEmail(email);
 
   return (
-    <BrowserRouter>
-      <section>
-        <Route path="./LoginForm" component={LoginForm} />
-        <header>Recover Password</header>
-        <form>
-          <input
-            type="email"
-            name="email"
-            placeholder="example@gmail.com"
-            value={email}
-            onChange={e => changeEmail(e.target.value)}
-          />
-          {emailError && <label>{emailError}</label>}
+    <section>
+      <form>
+        <label>Password Recovery</label>
+        <input
+          type="email"
+          name="email"
+          placeholder="example@gmail.com"
+          value={email}
+          onChange={e => changeEmail(e.target.value)}
+        />
+        {emailError && <label>{emailError}</label>}
 
-          <button id="send" value="Send" onClick={onSubmit}>
-            Send
+        <button id="send" className="register" value="Send" onClick={onSubmit}>
+          Send
           </button>
-          <Link to="./LoginForm" className="link">
-            <label className="label">Go back to login Form</label>
-          </Link>
-          {labelMsg && <label>{labelMsg}</label>}
-        </form>
-      </section>
-    </BrowserRouter>
+        <Link to="/" className="link">
+          <label className="label">Go back to login Form</label>
+        </Link>
+        {labelMsg && <label>{labelMsg}</label>}
+      </form>
+    </section>
   );
 };

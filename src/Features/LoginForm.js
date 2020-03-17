@@ -58,11 +58,12 @@ export const LoginForm = () => {
 
   const changeEmail = email => setEmail(email);
   const changePassword = password => setPassword(password);
+  const pageTitle = "Login Form";
 
   return (
     <section>
-      <header>Login Form</header>
       <form>
+        <label>Login Panel</label>
         <input
           type="email"
           name="email"
@@ -80,14 +81,14 @@ export const LoginForm = () => {
           onChange={e => changePassword(e.target.value)}
         />
         {passwordError && <label>{passwordError}</label>}
-        <Link to="/ForgottenPassForm">
+        <Link to="/ForgottenPass">
           <label className="label">Forgotten password?</label>
         </Link>
-        <button id="login" value="Login" onClick={onSubmit}>
+        <button className="login" value="Login" onClick={onSubmit}>
           Login
           </button>
         <Link to="/RegisterForm" className="link">
-          <button id="register" value="Register">
+          <button className="register" value="Register">
             Register
             </button>
         </Link>

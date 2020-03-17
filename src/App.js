@@ -9,7 +9,7 @@ const Router = () => (
   <Switch>
     <Route exact path="/" component={LoginForm} />
     <Route exact path="/RegisterForm" component={RegisterForm} />
-    <Route exact path="/ForgottenPassword" component={ForgottenPassForm} />
+    <Route exact path="/ForgottenPass" component={ForgottenPassForm} />
   </Switch>
 )
 
@@ -20,7 +20,7 @@ function App() {
     <div className="App">
       {/* <h1>Welcome to Healthy Club page! </h1> */}
       <BrowserRouter>
-        <div className="Panel">
+        <div className="Panel ContainerFlex">
           <Router />
           {/* <RegisterForm class="LoginPanel"></RegisterForm> */}
         </div>

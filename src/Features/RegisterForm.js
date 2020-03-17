@@ -2,8 +2,16 @@ import "../App.css";
 import React, { useState } from "react";
 import axios from "axios";
 import { LoginForm } from "./LoginForm";
+import { BrowserRouter, Link, Route } from "react-router-dom";
 
 const validate = form => {
+
+  if (!form.name) {
+    return "name is required";
+  } else if (form.name.length < 2) {
+    return "name is too short";
+  }
+
   if (!form.email) {
     return "Email is required";
   } else if (
@@ -12,12 +20,6 @@ const validate = form => {
     )
   ) {
     return "Wrong email";
-  }
-
-  if (!form.name) {
-    return "name is required";
-  } else if (form.name.length < 2) {
-    return "name is too short";
   }
 
   if (!form.password) {
@@ -64,6 +66,7 @@ export const RegisterForm = () => {
       return;
     } else {
       // setMsq("Form submitted")
+      setError("");
       postData();
       console.log("formsubmitted", form);
     }
@@ -80,7 +83,6 @@ export const RegisterForm = () => {
 
   return (
     <section>
-      <header>Login Form</header>
       <form>
         <label>Register Form</label>
         {error && <label>{error}</label>}
@@ -117,10 +119,12 @@ export const RegisterForm = () => {
           onChange={changeField}
         />
 
-        <input type="button" value="Submit" onClick={handleSubmit} />
-
-        <label className="label">Already a member?</label>
-        <input type="button" value="Login" />
+        <button className="login" value="Submit" onClick={handleSubmit}>
+          Submit
+          </button>
+        <Link to="/">
+          <label className="label">Already a member?</label>
+        </Link>
       </form>
     </section>
   );
