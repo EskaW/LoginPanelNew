@@ -78,11 +78,12 @@ button {
 }
 
 input {
+  min-width: 20vw;
+  line-height: 8vh;
+  margin: 5px;
   flex: 1 1 auto;
   border-radius: 10px;
   min-height: 8vh;
-  min-width: 20vw;
-  line-height: 8vh;
 }
 
 ::placeholder {
@@ -96,10 +97,6 @@ input {
     animation: App-logo-spin infinite 20s linear;
   }
 } */
-
-input {
-  margin: 5px;
-}
 
 .label {
   font-size: calc(0.5em + 0.5vh);
